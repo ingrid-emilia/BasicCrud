@@ -4,20 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductTable extends Migration
+return new class extends Migration
 {
-
-
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::create('product', function (Blueprint $table) {
-            $table->id(); 
-            $table->timestamp('');
+            $table->id();
+            $table->timestamps();
             $table->string('name');
-            $table->number('outgoing');
-            $table->number('price');
-            $table->int('amount');
-            
+            $table->double('outgoing', 19, 2);
+            $table->double('price', 19, 2);
+            $table->integer('amount');
 
         });
     }
